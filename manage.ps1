@@ -1,3 +1,3 @@
 git add .
-git commit -m 'created node script deleteSubscription'
+git commit -m 'updated python opensearch backfill command to use env json'
 git push origin master
