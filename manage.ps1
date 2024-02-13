@@ -1,3 +1,3 @@
 git add .
-git commit -m 'updated python opensearch backfill command to use env json'
+git commit -m 'updated python env to use new opensearch lambda for staging'
 git push origin master
