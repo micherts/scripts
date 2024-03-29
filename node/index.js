@@ -1,7 +1,7 @@
 import { deleteSubscription } from "./functions.js";
 import { staging } from "./env.js";
 
-deleteSubscription("602.sunday@gmail.com", staging); // first manually delete customer from Stripe
+deleteSubscription("micherts@me.com", staging); // first manually delete customer from Stripe
 
 // Object.values(staging.ops).forEach((table) => updateData(table));
 // addParam(staging.ops.operation, { operation: 0 });

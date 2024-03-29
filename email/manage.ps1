@@ -29,3 +29,8 @@ $testEmail = [PSCustomObject]@{
 }
 
 aws ses send-templated-email --cli-input-json ($testEmail | ConvertTo-Json)
+
+# Next steps
+# Create node funtion to delete user account
+# Create a new account for micherts@me.com
+# Test account-request template

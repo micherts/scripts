@@ -1,3 +1,3 @@
 git add .
-git commit -m 'added email script to create email templates'
+git commit -m 'updated node scripts to fix dynamo delete error, updated all node packages, added .gitignore for node_modules'
 git push origin master

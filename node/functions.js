@@ -130,7 +130,10 @@ const deleteSubscription = async (email, env) => {
 
   // Operation	mainUser = UserProfile.id	Delete items
   venues.forEach(({ id }) =>
-    deleteItem({ TableName, Key: id }, `table: ${TableName} id: ${id} DELETE.`)
+    deleteItem(
+      { TableName, Key: { id } },
+      `table: ${TableName} id: ${id} DELETE.`
+    )
   );
 
   // Ingredient	userGroup = Operation.userGroup	Delete items
@@ -152,7 +155,7 @@ const deleteSubscription = async (email, env) => {
     );
     items.forEach(({ id }) =>
       deleteItem(
-        { TableName, Key: id },
+        { TableName, Key: { id } },
         `table: ${TableName} id: ${id} DELETE.`
       )
     );
@@ -169,7 +172,10 @@ const deleteSubscription = async (email, env) => {
     )
   ).filter(({ ownerId }) => ownerId === userProfileId)[0] || { id: undefined };
 
-  deleteItem({ TableName, Key: id }, `table: ${TableName} id: ${id} DELETE.`);
+  deleteItem(
+    { TableName, Key: { id } },
+    `table: ${TableName} id: ${id} DELETE.`
+  );
 
   // Group Memberships		Delete subscribed group (may not want to delete in PROD)
   const { UserPoolId, templateGroups } = env.config;
