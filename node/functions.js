@@ -1,5 +1,5 @@
 import { putDC, updateDC, scanDC, deleteItem } from "./dynamo.js";
-import { deleteGroup, removeUserFromGroup } from "./cognito.js";
+import { delUser, deleteGroup, removeUserFromGroup } from "./cognito.js";
 
 const deleteItemsFromGroups = async (table, groups, included) => {
   const existing = await scanDC({
@@ -192,6 +192,32 @@ const deleteSubscription = async (email, env) => {
   );
 };
 
+const deleteUser = async (email, env) => {
+  // first run deleteSubscription if any previous subscriptions
+  // this function deletes userprofile and cognito user
+
+  // UserProfile	email = user's email
+  const { userProfile: TableName } = env.config;
+  const { id } = (
+    await scanDC(
+      {
+        TableName,
+      },
+      `table: ${TableName} SCAN (for email ${email}).`
+    )
+  ).filter((a) => a.email === email)[0];
+
+  // Delete UserProfile item
+  deleteItem(
+    { TableName, Key: { id } },
+    `table: ${TableName} id: ${id} DELETE.`
+  );
+
+  // Delete User
+  const { UserPoolId } = env.config;
+  delUser({ Username: id, UserPoolId }, `user: ${id} DELETE.`);
+};
+
 export {
   deleteItemsFromGroups,
   addParam,
@@ -199,4 +225,5 @@ export {
   copyTemplatesBetweenEnv,
   renameParameter,
   deleteSubscription,
+  deleteUser,
 };

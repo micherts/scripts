@@ -3,6 +3,7 @@ import { getReasonPhrase } from "http-status-codes";
 import {
   CognitoIdentityProviderClient,
   AdminAddUserToGroupCommand,
+  AdminDeleteUserCommand,
   AdminRemoveUserFromGroupCommand,
   CreateGroupCommand,
   DeleteGroupCommand,
@@ -110,6 +111,24 @@ const deleteGroup = async (params, log) => {
 //     )
 //   );
 
+const delUser = async (params, log) => {
+  // params = {Username, UserPoolId}
+  cl(log);
+  const {
+    $metadata: { httpStatusCode },
+  } = await client.send(new AdminDeleteUserCommand(params));
+  cl(log, getReasonPhrase(httpStatusCode));
+};
+
+// const deleteUsers = (usernames, UserPoolId) =>
+//   Promise.all(
+//     usernames.map((Username) =>
+//       Username
+//         ? deleteUser({Username, UserPoolId}, `Delete user ${Username}.`)
+//         : undefined
+//     )
+//   );
+
 export {
   addUserToGroups,
   addUserToTemplateGroups,
@@ -117,6 +136,7 @@ export {
   // removeUserFromTemplateGroups,
   createGroups,
   deleteGroup,
+  delUser,
 };
 
 // const unsubscribeGroup = async ({ group }, log1) => {
