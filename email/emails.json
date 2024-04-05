@@ -1,0 +1,22 @@
+{
+  "account-requested": {
+    "name": "account-requested",
+    "subject": "Your HospoSure verification code"
+  },
+  "reset-password": {
+    "name": "reset-password",
+    "subject": "Your HospoSure verification code"
+  },
+  "account-verified": {
+    "name": "account-verified",
+    "subject": "We're here to help you get started"
+  },
+  "subscription-started": {
+    "name": "subscription-started",
+    "subject": "Congratulations on your HospoSure subscription"
+  },
+  "subscription-expired": {
+    "name": "subscription-expired",
+    "subject": "Your HospoSure subscription has expired"
+  }
+}

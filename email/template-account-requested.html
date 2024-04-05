@@ -1,17 +1,27 @@
 <html>
   <head>
+    <!-- Dark Mode meta tags needed to enable Dark Mode in email client user agents -->
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark only" />
     <title>Account requested</title>
     <style type="text/css">
+      /* Dark Mode :root style needed to enable Dark Mode in email client user agents */
+      :root {
+        color-scheme: light dark;
+        supported-color-schemes: light dark;
+      }
       body {
         margin: 0;
         font-family: roboto, helvetica, arial, sans-serif;
+        background-color: #f0f2f5;
+      }
+      p,
+      td {
         line-height: 24px;
         letter-spacing: 0;
         font-size: 16px;
         text-align: center;
-      }
-      td {
-        text-align: center;
+        color: #344767;
       }
       a {
         text-decoration: none;
@@ -28,6 +38,26 @@
         font-size: 14px;
         color: #8596b8;
       }
+      /* Dark Mode media queries to target Apple and iOS */
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #1a2035;
+        }
+        p,
+        td {
+          color: #fff;
+        }
+      }
+      /* Dark Mode media queries to target some Android and Outlook.com  */
+      /* targets background styles */
+      [data-ogsb] body {
+        background-color: #1a2035;
+      }
+      /* targets color styles */
+      [data-ogsc] p,
+      td {
+        color: #fff;
+      }
     </style>
   </head>
   <body>
@@ -39,7 +69,8 @@
     /></a>
     <p>Thank you for requesting an account.</p>
     <p>Your verification code is...</p>
-    <p class="code">{####}</p>
+    <!-- <p class="code">{####}</p> -->
+    <p class="code">{{code}}</p>
   </body>
   <footer>
     <table width="100%">
