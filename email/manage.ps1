@@ -1,5 +1,5 @@
 $emails = Get-Content .\emails.json | ConvertFrom-Json
-$email = $emails.'account-requested'
+$email = $emails.'verification-code'
 
 # Use Stripo to create and export the HTML template and save as template-$name.html.
 # Manually create the txt template and save as template-$name.txt.
@@ -18,6 +18,7 @@ $template | ConvertTo-Json | Out-File ".\template-$($email.name).json"
 aws ses create-template --cli-input-json "file://template-$($email.name).json"
 aws ses update-template --cli-input-json "file://template-$($email.name).json"
 aws ses list-templates 
+aws ses delete-template --template-name $email.name
 
 $testEmail = [PSCustomObject]@{
     "Source"       = "HospoSure <hello@hosposure.com.au>"
@@ -26,13 +27,14 @@ $testEmail = [PSCustomObject]@{
         "ToAddresses" = @( "michael.roberts@hosposure.com.au", "micherts@me.com")
     }
     "TemplateData" = [PSCustomObject]@{
-        name = "Michael"
-        code = "1234" 
+        name     = "Michael"
+        code     = "1234" 
+        username = "youremail@email.com"
     } | ConvertTo-Json
 }
 
 aws ses send-templated-email --cli-input-json ($testEmail | ConvertTo-Json)
 
 # Next steps
-# Improve email templates
+# Format account-verified template
 # Update stripeWebhook to include email actions

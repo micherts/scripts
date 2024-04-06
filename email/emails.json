@@ -1,10 +1,6 @@
 {
-  "account-requested": {
-    "name": "account-requested",
-    "subject": "Your HospoSure verification code"
-  },
-  "reset-password": {
-    "name": "reset-password",
+  "verification-code": {
+    "name": "verification-code",
     "subject": "Your HospoSure verification code"
   },
   "account-verified": {

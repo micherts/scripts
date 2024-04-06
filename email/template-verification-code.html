@@ -1,14 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <!-- Dark Mode meta tags needed to enable Dark Mode in email client user agents -->
+    <!-- Dark Mode meta tags to enable Dark Mode in email client user agents -->
     <meta name="color-scheme" content="light dark" />
     <meta name="supported-color-schemes" content="light dark only" />
-    <title>Account requested</title>
-    <style type="text/css">
-      /* Dark Mode :root style needed to enable Dark Mode in email client user agents */
+    <style>
+      /* Dark Mode :root style to enable Dark Mode in email client user agents */
       :root {
         color-scheme: light dark;
-        supported-color-schemes: light dark;
       }
       body {
         margin: 0;
@@ -20,7 +19,6 @@
         line-height: 24px;
         letter-spacing: 0;
         font-size: 16px;
-        text-align: center;
         color: #344767;
       }
       a {
@@ -31,16 +29,20 @@
         font-size: 30px;
         letter-spacing: 10px;
       }
-      .img {
-        text-align: center;
-      }
       footer {
         margin-top: 50px;
       }
       footer p,
-      a {
+      footer a {
         font-size: 14px;
-        color: #8596b8;
+        color: #8596b8 !important;
+      }
+      @media (max-width: 600px) {
+        p,
+        td,
+        .img {
+          text-align: center;
+        }
       }
       /* Dark Mode media queries to target Apple and iOS */
       @media (prefers-color-scheme: dark) {
@@ -65,33 +67,32 @@
     </style>
   </head>
   <body>
-    <div class="img">
-      <a target="_blank" href="https://hosposure.com.au"
-        ><img
-          src="https://hosposure.com.au/assets/img/hospoSureLogo.png"
-          alt="HospoSure logo"
-          width="342"
-      /></a>
-    </div>
-    <p>Thank you for requesting an account.</p>
     <p>Your verification code is...</p>
     <!-- <p class="code">{####}</p> -->
     <p class="code">{{code}}</p>
+    <footer>
+      <div class="img">
+        <a target="_blank" href="https://hosposure.com.au"
+          ><img
+            src="https://hosposure.com.au/assets/img/hospoSureLogo.png"
+            alt="HospoSure | Your cafe with confidence"
+            width="342"
+        /></a>
+      </div>
+      <p>
+        <a target="_blank" href="https://hosposure.com.au/privacy.html"
+          >Privacy Policy</a
+        >
+        |
+        <a target="_blank" href="https://hosposure.com.au/terms.html"
+          >Terms &amp; Conditions</a
+        >
+      </p>
+      <p>
+        Copyright &copy; 2024
+        <a target="_blank" href="https://hosposure.com.au">HospoSure Pty Ltd</a
+        >. <br />All rights reserved.
+      </p>
+    </footer>
   </body>
-  <footer>
-    <p>
-      <a target="_blank" href="https://hosposure.com.au/privacy.html"
-        >Privacy Policy</a
-      >
-      |
-      <a target="_blank" href="https://hosposure.com.au/terms.html"
-        >Terms &amp; Conditions</a
-      >
-    </p>
-    <p>
-      Copyright &copy; 2024
-      <a target="_blank" href="https://hosposure.com.au">HospoSure Pty Ltd</a>.
-      <br />All rights reserved.
-    </p>
-  </footer>
 </html>

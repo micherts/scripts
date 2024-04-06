@@ -1,3 +1,3 @@
 git add .
-git commit -m 'updated email template account-requested for dark mode'
+git commit -m 'converted email template account-requested to verification-code, checked with W3C validator'
 git push origin master
