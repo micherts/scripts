@@ -13,7 +13,7 @@
       body {
         margin: 0;
         font-family: roboto, helvetica, arial, sans-serif;
-        background-color: #f0f2f5;
+        background-color: transparent;
       }
       p,
       td {
@@ -31,18 +31,22 @@
         font-size: 30px;
         letter-spacing: 10px;
       }
+      .img {
+        text-align: center;
+      }
       footer {
         margin-top: 50px;
       }
-      footer a {
+      footer p,
+      a {
         font-size: 14px;
         color: #8596b8;
       }
       /* Dark Mode media queries to target Apple and iOS */
       @media (prefers-color-scheme: dark) {
-        body {
+        /* body {
           background-color: #1a2035;
-        }
+        } */
         p,
         td {
           color: #fff;
@@ -50,9 +54,9 @@
       }
       /* Dark Mode media queries to target some Android and Outlook.com  */
       /* targets background styles */
-      [data-ogsb] body {
+      /* [data-ogsb] body {
         background-color: #1a2035;
-      }
+      } */
       /* targets color styles */
       [data-ogsc] p,
       td {
@@ -61,36 +65,33 @@
     </style>
   </head>
   <body>
-    <a target="_blank" href="https://hosposure.com.au"
-      ><img
-        src="https://hosposure.com.au/assets/img/hospoSureLogo.png"
-        alt="HospoSure logo"
-        width="342"
-    /></a>
+    <div class="img">
+      <a target="_blank" href="https://hosposure.com.au"
+        ><img
+          src="https://hosposure.com.au/assets/img/hospoSureLogo.png"
+          alt="HospoSure logo"
+          width="342"
+      /></a>
+    </div>
     <p>Thank you for requesting an account.</p>
     <p>Your verification code is...</p>
     <!-- <p class="code">{####}</p> -->
     <p class="code">{{code}}</p>
   </body>
   <footer>
-    <table width="100%">
-      <tr>
-        <td>
-          <a target="_blank" href="https://hosposure.com.au"
-            >HospoSure &copy; 2024</a
-          >
-        </td>
-        <td>
-          <a target="_blank" href="https://hosposure.com.au/privacy.html"
-            >Privacy Policy</a
-          >
-        </td>
-        <td>
-          <a target="_blank" href="https://hosposure.com.au/terms.html"
-            >Terms &amp; Conditions</a
-          >
-        </td>
-      </tr>
-    </table>
+    <p>
+      <a target="_blank" href="https://hosposure.com.au/privacy.html"
+        >Privacy Policy</a
+      >
+      |
+      <a target="_blank" href="https://hosposure.com.au/terms.html"
+        >Terms &amp; Conditions</a
+      >
+    </p>
+    <p>
+      Copyright &copy; 2024
+      <a target="_blank" href="https://hosposure.com.au">HospoSure Pty Ltd</a>.
+      <br />All rights reserved.
+    </p>
   </footer>
 </html>
