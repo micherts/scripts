@@ -94,128 +94,141 @@ const deleteSubscription = async (email, env) => {
   // first manually delete customer from Stripe
   // this function deletes membership, venues, and entries
 
+  console.log(`Delete Subscriptions for ${email}.`);
   // UserProfile	email = user's email	Get attribute id
   let TableName = env.config.userProfile;
-  const userProfileId = (
+  const userProfiles = (
     await scanDC(
       {
         TableName,
       },
       `table: ${TableName} SCAN (for email ${email}).`
     )
-  ).filter((a) => a.email === email)[0].id;
+  ).filter((a) => a.email === email);
 
-  // UserProfile	email = user's email	Remove attribute selectedVenueId
-  const param = "selectedVenueId";
-  updateDC(
-    {
-      TableName,
-      Key: { id: userProfileId },
-      ExpressionAttributeNames: { [`#${param}`]: param },
-      UpdateExpression: `REMOVE #${param}`,
-    },
-    `table: ${TableName} id: ${userProfileId} parameter: ${param} REMOVE.`
-  );
-
-  // Operation	mainUser = UserProfile.id	Get attribute userGroup
-  TableName = env.ops.operation;
-  const venues = (
-    await scanDC(
+  userProfiles.forEach(async ({ id: userProfileId }) => {
+    // UserProfile	email = user's email	Remove attribute selectedVenueId
+    const param = "selectedVenueId";
+    updateDC(
       {
         TableName,
+        Key: { id: userProfileId },
+        ExpressionAttributeNames: { [`#${param}`]: param },
+        UpdateExpression: `REMOVE #${param}`,
       },
-      `table: ${TableName} SCAN (for mainUser ${userProfileId}).`
-    )
-  ).filter((a) => a.mainUser === userProfileId);
+      `table: ${TableName} id: ${userProfileId} parameter: ${param} REMOVE.`
+    );
 
-  // Operation	mainUser = UserProfile.id	Delete items
-  venues.forEach(({ id }) =>
-    deleteItem(
-      { TableName, Key: { id } },
-      `table: ${TableName} id: ${id} DELETE.`
-    )
-  );
-
-  // Ingredient	userGroup = Operation.userGroup	Delete items
-  // Overhead	userGroup = Operation.userGroup	Delete items
-  // Recipe	userGroup = Operation.userGroup	Delete items
-  // RecipeIngredient	userGroup = Operation.userGroup	Delete items
-  // Role	userGroup = Operation.userGroup	Delete items
-  // Supplier	userGroup = Operation.userGroup	Delete items
-  Object.values(env.ops).forEach(async (TableName) => {
-    const items = (
+    // Operation	mainUser = UserProfile.id	Get attribute userGroup
+    TableName = env.ops.operation;
+    const venues = (
       await scanDC(
         {
           TableName,
         },
-        `table: ${TableName} SCAN (for userGroups).`
+        `table: ${TableName} SCAN (for mainUser ${userProfileId}).`
       )
-    ).filter((a) =>
-      venues.map(({ userGroup }) => userGroup).includes(a.userGroup)
-    );
-    items.forEach(({ id }) =>
+    ).filter((a) => a.mainUser === userProfileId);
+
+    // Operation	mainUser = UserProfile.id	Delete items
+    venues.forEach(({ id }) =>
       deleteItem(
         { TableName, Key: { id } },
         `table: ${TableName} id: ${id} DELETE.`
       )
     );
+
+    // Ingredient	userGroup = Operation.userGroup	Delete items
+    // Overhead	userGroup = Operation.userGroup	Delete items
+    // Recipe	userGroup = Operation.userGroup	Delete items
+    // RecipeIngredient	userGroup = Operation.userGroup	Delete items
+    // Role	userGroup = Operation.userGroup	Delete items
+    // Supplier	userGroup = Operation.userGroup	Delete items
+    Object.values(env.ops).forEach(async (TableName) => {
+      const items = (
+        await scanDC(
+          {
+            TableName,
+          },
+          `table: ${TableName} SCAN (for userGroups).`
+        )
+      ).filter((a) =>
+        venues.map(({ userGroup }) => userGroup).includes(a.userGroup)
+      );
+      items.forEach(({ id }) =>
+        deleteItem(
+          { TableName, Key: { id } },
+          `table: ${TableName} id: ${id} DELETE.`
+        )
+      );
+    });
+
+    // Membership	ownerId = UserProfile.id	Delete items
+    TableName = env.config.membership;
+    const { id } = (
+      await scanDC(
+        {
+          TableName,
+        },
+        `table: ${TableName} SCAN (for ownerId ${userProfileId}).`
+      )
+    ).filter(({ ownerId }) => ownerId === userProfileId)[0] || {
+      id: undefined,
+    };
+
+    deleteItem(
+      { TableName, Key: { id } },
+      `table: ${TableName} id: ${id} DELETE.`
+    );
+
+    // Group Memberships		Delete subscribed group (may not want to delete in PROD)
+    const { UserPoolId, templateGroups } = env.config;
+    venues.forEach(({ userGroup: GroupName }) =>
+      deleteGroup({ GroupName, UserPoolId }, `userGroup: ${GroupName} DELETE.`)
+    );
+
+    // Group Memberships		Remove user from Template
+    templateGroups.forEach((GroupName) =>
+      removeUserFromGroup(
+        { Username: userProfileId, GroupName, UserPoolId },
+        `userGroup: ${GroupName} REMOVE USER ${userProfileId}.`
+      )
+    );
   });
-
-  // Membership	ownerId = UserProfile.id	Delete items
-  TableName = env.config.membership;
-  const { id } = (
-    await scanDC(
-      {
-        TableName,
-      },
-      `table: ${TableName} SCAN (for ownerId ${userProfileId}).`
-    )
-  ).filter(({ ownerId }) => ownerId === userProfileId)[0] || { id: undefined };
-
-  deleteItem(
-    { TableName, Key: { id } },
-    `table: ${TableName} id: ${id} DELETE.`
-  );
-
-  // Group Memberships		Delete subscribed group (may not want to delete in PROD)
-  const { UserPoolId, templateGroups } = env.config;
-  venues.forEach(({ userGroup: GroupName }) =>
-    deleteGroup({ GroupName, UserPoolId }, `userGroup: ${GroupName} DELETE.`)
-  );
-
-  // Group Memberships		Remove user from Template
-  templateGroups.forEach((GroupName) =>
-    removeUserFromGroup(
-      { Username: userProfileId, GroupName, UserPoolId },
-      `userGroup: ${GroupName} REMOVE USER ${userProfileId}.`
-    )
-  );
 };
 
 const deleteUser = async (email, env) => {
   // first run deleteSubscription if any previous subscriptions
   // this function deletes userprofile and cognito user
 
+  console.log(`Delete User ${email}.`);
   // UserProfile	email = user's email
   const { userProfile: TableName } = env.config;
-  const { id } = (
+  const userProfiles = (
     await scanDC(
       {
         TableName,
       },
       `table: ${TableName} SCAN (for email ${email}).`
     )
-  ).filter((a) => a.email === email)[0];
+  ).filter((a) => a.email === email);
 
-  // Delete UserProfile item
-  deleteItem(
-    { TableName, Key: { id } },
-    `table: ${TableName} id: ${id} DELETE.`
-  );
+  userProfiles.forEach(({ id }) => {
+    // Delete UserProfile item
+    deleteItem(
+      { TableName, Key: { id } },
+      `table: ${TableName} id: ${id} DELETE.`
+    );
+  });
 
   // Delete User
-  const { UserPoolId } = env.config;
-  delUser({ Username: id, UserPoolId }, `user: ${id} DELETE.`);
+  userProfiles
+    .map(({ id }) => id)
+    .filter((a, i, self) => i === self.indexOf(a))
+    .forEach((id) => {
+      const { UserPoolId } = env.config;
+      delUser({ Username: id, UserPoolId }, `user: ${id} DELETE.`);
+    });
 };
 
 export {

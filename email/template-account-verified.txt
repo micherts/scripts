@@ -1,6 +1,6 @@
-Hey {{name}} and welcome to HospoSure! 
+Welcome to HospoSure, {{name}}!
 
-We're here to help you get started. HospoSure combines the latest tech with leading hospitality expertise to offer unparalleled insight into cafe modelling, recipe analysis, and financial metrics for both startups and established operators.
+It's great to have you here. HospoSure combines the latest tech with leading hospitality expertise to offer unparalleled insight into cafe modelling, recipe analysis, and financial metrics for both startups and established operators.
 
 Go to app.hosposure.com.au to view the Demo.
 

@@ -15,6 +15,13 @@
         background-color: transparent;
         max-width: 700px;
       }
+      img.banner {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
       p,
       tr,
       .img {
@@ -102,10 +109,15 @@
     </style>
   </head>
   <body>
-    <p>Hey {{name}} and welcome to HospoSure!</p>
+    <img
+      src="https://hosposure.com.au/assets/email/account-verified.png"
+      class="banner"
+      alt="Woman working on a laptop outside a cafe."
+    />
+    <p>Welcome to HospoSure, {{name}}!</p>
     <p>
-      We're here to help you get started. HospoSure combines the latest tech
-      with leading hospitality expertise to offer unparalleled insight into cafe
+      It's great to have you here. HospoSure combines the latest tech with
+      leading hospitality expertise to offer unparalleled insight into cafe
       modelling, recipe analysis, and financial metrics for both startups and
       established operators.
     </p>

@@ -24,7 +24,7 @@ $testEmail = [PSCustomObject]@{
     "Source"       = "HospoSure <hello@hosposure.com.au>"
     "Template"     = $email.name
     "Destination"  = [PSCustomObject]@{
-        # "ToAddresses" = @( "michael.roberts@hosposure.com.au", "micherts@me.com")
+        #"ToAddresses" = @( "michael.roberts@hosposure.com.au", "micherts@me.com")
         "ToAddresses" = @( "tim.noye@hosposure.com.au")
     }
     "TemplateData" = [PSCustomObject]@{
