@@ -1,3 +1,3 @@
 git add .
-git commit -m 'updated template-account-verified to remove icons'
+git commit -m 'added template-subscription-started'
 git push origin master

@@ -17,6 +17,7 @@
       }
       .page {
         max-width: 700px;
+        text-align: center;
       }
       img.banner {
         max-width: 100%;
@@ -36,25 +37,28 @@
         letter-spacing: 0;
         font-size: 14px;
         color: #000;
+        margin: 14px 0 0;
       }
       td.icon {
         width: 100px;
         color: #8596b8;
         text-align: center;
       }
+      p.code {
+        font-size: 30px;
+        letter-spacing: 10px;
+      }
       h2 {
+        margin-top: 30px;
         font-size: 16px;
         color: #000;
+        text-align: center;
       }
       a {
         text-decoration: none;
         color: #54af50;
       }
-      .code {
-        font-size: 30px;
-        letter-spacing: 10px;
-      }
-      .button {
+      a.button {
         color: #fff !important;
         font-size: 20px;
         padding: 10px 30px 10px 30px;
@@ -62,25 +66,25 @@
         background: #54af50;
         border-radius: 5px;
         width: auto;
-        text-align: center;
-        margin: 20px 0px;
+        /* text-align: center; */
+        margin: 14px auto;
       }
-      .text-block-right {
+      /* td.text-block-right {
         text-align: left;
         padding-left: 30px;
       }
-      .text-block-left {
+      td.text-block-right p {
+        text-align: left;
+      }
+      td.text-block-left {
         text-align: right;
         padding-right: 30px;
       }
-      .text-block-right p {
-        text-align: left;
-      }
       td.text-block-left p {
         text-align: right;
-      }
+      } */
       footer {
-        margin-top: 50px;
+        margin-top: 30px;
       }
       footer p,
       footer a {
@@ -114,89 +118,80 @@
   <body>
     <div class="page">
       <img
-        src="https://hosposure.com.au/assets/email/account-verified.png"
+        src="https://hosposure.com.au/assets/email/subscription-started.png"
         class="banner"
-        alt="Woman working on a laptop outside a cafe."
+        alt="Smiling woman working on a laptop."
       />
-      <p>Welcome to HospoSure, {{name}}!</p>
+      <h2>Congratulations {{name}},</h2>
       <p>
-        It's great to have you here. HospoSure combines the latest tech with
-        leading hospitality expertise to offer unparalleled insight into cafe
-        modelling, recipe analysis, and financial metrics for both startups and
-        established operators.
+        Smart move on your new subscription! The peace of mind you'll have once
+        you understand the numbers, the operations, and how to cost a menu
+        accurately is priceless. From here, things can only get better!
       </p>
-      <p>
-        <a
-          href="https://app.hosposure.com.au"
-          id="sign-in-button"
-          class="button"
-          data-button="success"
-          >View Demo</a
-        >
-      </p>
+      <a
+        href="https://app.hosposure.com.au"
+        id="sign-in-button"
+        class="button"
+        data-button="success"
+        >Sign In</a
+      >
       <table>
         <tr>
-          <td class="icon">
+          <!-- <td class="icon">
             <img
               src="https://hosposure.com.au/assets/email/dashboard.png"
               width="100"
               alt="Dashboard icon"
             />
-          </td>
+          </td> -->
           <td class="text-block-right">
-            <h2>Simplified Cafe Planning</h2>
+            <h2>Model and Build</h2>
             <p>
-              Now you've created an account, you have access to HospoSure's free
-              Demo. Explore how we've streamlined the costing process by
-              dividing your journey into two key segments: Cafe Modelling and
-              Menu Building. Then, refine your model using the Dashboard to
-              track progress.
+              Now you've subscribed, you have access to your own venue and can
+              start modelling your cafe and building out your menu. As you model
+              and build, you can check how the numbers stack up on the dashboard
+              at any time.
             </p>
           </td>
         </tr>
-      </table>
-      <table>
+
         <tr>
           <td class="text-block-left">
-            <h2>Invest in Your Future</h2>
+            <h2>Coaching Notes</h2>
             <p>
               We're here to support you as you navigate the path to building a
-              thriving cafe business. With detailed templates, handy coaching
-              guides, pop-ups and help at every stage, you'll gain the knowledge
-              and confidence you need to succeed.
+              thriving cafe business. With handy coaching notes, pop-ups, and
+              guides at every stage, you'll gain the knowledge and confidence
+              you need to succeed.
             </p>
           </td>
-          <td class="icon">
+          <!-- <td class="icon">
             <img
               src="https://hosposure.com.au/assets/email/school.png"
               width="100"
               alt="Coaching icon"
             />
-          </td>
+          </td> -->
         </tr>
-      </table>
-      <table>
         <tr>
-          <td class="icon">
+          <!-- <td class="icon">
             <img
               src="https://hosposure.com.au/assets/email/handshake.png"
               width="100"
               alt="Handshake icon"
             />
-          </td>
+          </td> -->
           <td class="text-block-right">
-            <h2>Love the Demo?</h2>
+            <h2>Fine-Tuning and Hospitality Mentorship</h2>
             <p>
-              Once you've had a good look through the Demo and understand a
-              little more about how HospoSure helps, it's time to create your
-              own venue.
-              <a
-                target="_blank"
-                href="https://app.hosposure.com.au/profile/account"
-                >Subscribe</a
+              We partner with Clever Cafe Company, leaders in cafe-specific
+              business coaching, to provide subsidised mentorship ensuring you
+              receive additional support when you need it. Register at
+              <a target="_blank" href="https://clevercafecompany.com.au"
+                >CleverCafeCompany.com.au</a
               >
-              to enable access to a fresh venue and start building your dream
-              cafe.
+              to book HospoSure mentorship sessions and avail the discounted
+              rate.
             </p>
           </td>
         </tr>
