@@ -14,35 +14,69 @@
         font-family: roboto, helvetica, arial, sans-serif;
         background-color: transparent;
       }
+      .page {
+        max-width: 700px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      img.banner {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      p,
+      tr,
+      .img {
+        text-align: center;
+      }
       p,
       td {
         line-height: 24px;
         letter-spacing: 0;
-        font-size: 16px;
-        color: #344767;
+        font-size: 14px;
+        color: #000;
+        margin: 14px 0 0;
       }
-      a {
-        text-decoration: none;
-        color: #54af50;
+      td.icon {
+        width: 100px;
+        color: #8596b8;
+        text-align: center;
       }
-      .code {
+      p.code {
         font-size: 30px;
         letter-spacing: 10px;
       }
+      h2 {
+        margin-top: 30px;
+        font-size: 16px;
+        color: #000;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: #54af50 !important;
+      }
+      a.button {
+        color: #fff !important;
+        font-size: 20px;
+        padding: 10px 30px 10px 30px;
+        display: inline-block;
+        background: #54af50;
+        border-radius: 5px;
+        width: auto;
+        /* text-align: center; */
+        margin: 14px auto;
+      }
       footer {
-        margin-top: 50px;
+        margin-top: 30px;
       }
       footer p,
       footer a {
         font-size: 14px;
         color: #8596b8 !important;
-      }
-      @media (max-width: 600px) {
-        p,
-        td,
-        .img {
-          text-align: center;
-        }
       }
       /* Dark Mode media queries to target Apple and iOS */
       @media (prefers-color-scheme: dark) {
@@ -60,39 +94,50 @@
         background-color: #1a2035;
       } */
       /* targets color styles */
-      [data-ogsc] p,
+      /* [data-ogsc] h2,
+      p,
       td {
         color: #fff;
-      }
+      } */
     </style>
   </head>
   <body>
-    <p>Your verification code is...</p>
-    <!-- <p class="code">{####}</p> -->
-    <p class="code">{{code}}</p>
-    <footer>
-      <div class="img">
-        <a target="_blank" href="https://hosposure.com.au"
-          ><img
-            src="https://hosposure.com.au/assets/img/hospoSureLogo.png"
-            alt="HospoSure | Your cafe with confidence"
-            width="342"
-        /></a>
-      </div>
-      <p>
-        <a target="_blank" href="https://hosposure.com.au/privacy.html"
-          >Privacy Policy</a
-        >
-        |
-        <a target="_blank" href="https://hosposure.com.au/terms.html"
-          >Terms &amp; Conditions</a
-        >
-      </p>
-      <p>
-        Copyright &copy; 2024
-        <a target="_blank" href="https://hosposure.com.au">HospoSure Pty Ltd</a
-        >. <br />All rights reserved.
-      </p>
-    </footer>
+    <div class="page">
+      <p>Your verification code is...</p>
+      <p class="code">{####}</p>
+      <!-- <p class="code">{{code}}</p> -->
+      <footer>
+        <div class="img">
+          <a target="_blank" href="https://hosposure.com.au"
+            ><img
+              src="https://hosposure.com.au/assets/img/hospoSureLogo.png"
+              alt="HospoSure | Your cafe with confidence"
+              width="342"
+          /></a>
+        </div>
+        <div>
+          <a target="_blank" href="https://www.linkedin.com/company/hosposure">
+            <img
+              src="https://hosposure.com.au/assets/email/linkedin-brands.png"
+              alt="Follow HospoSure on LinkedIn"
+          /></a>
+        </div>
+        <p>
+          <a target="_blank" href="https://hosposure.com.au/privacy.html"
+            >Privacy Policy</a
+          >
+          |
+          <a target="_blank" href="https://hosposure.com.au/terms.html"
+            >Terms &amp; Conditions</a
+          >
+        </p>
+        <p>
+          Copyright &copy; 2024
+          <a target="_blank" href="https://hosposure.com.au"
+            >HospoSure Pty Ltd</a
+          >. <br />All rights reserved.
+        </p>
+      </footer>
+    </div>
   </body>
 </html>

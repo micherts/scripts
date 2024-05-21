@@ -1,6 +1,7 @@
 $emails = Get-Content .\emails.json | ConvertFrom-Json
+$email = $emails.'verification-code'
 # $email = $emails.'account-verified'
-$email = $emails.'subscription-started'
+# $email = $emails.'subscription-started'
 
 # Use Stripo to create and export the HTML template and save as template-$name.html.
 # Manually create the txt template and save as template-$name.txt.
@@ -25,8 +26,8 @@ $testEmail = [PSCustomObject]@{
     "Source"       = "HospoSure <hello@hosposure.com.au>"
     "Template"     = $email.name
     "Destination"  = [PSCustomObject]@{
-        # "ToAddresses" = @( "michael.roberts@hosposure.com.au") #, "micherts@me.com")
-        "ToAddresses" = @( "tim.noye@hosposure.com.au")
+        "ToAddresses" = @( "michael.roberts@hosposure.com.au", "micherts@me.com")
+        # "ToAddresses" = @( "tim.noye@hosposure.com.au")
     }
     "TemplateData" = [PSCustomObject]@{
         # name     = "Michael"
