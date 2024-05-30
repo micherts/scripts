@@ -1,0 +1,26 @@
+Hi {{name}},
+
+We wanted to let you know your HospoSure subscription is set to expire on {{date}}. If this was a mistake, feel free to resubscribe below! If not, we’re sorry to see you go and hope to serve you again in the future.
+
+Go to app.hosposure.com.au/profile/account to resubscribe.
+
+Quick Check-In
+How's everything going? If you need any assistance to keep moving forward and give your cafe the attention it deserves, just let us know.
+
+Access to Your Venues
+Remember, if you don't resubscribe, you won't be able to access your venues after this date.
+
+Extra Support?
+Our partners at Clever Cafe Company CleverCafeCompany.com.au can help keep you moving forward with subsidised expert mentorship. Head over today and book yourself in for a HospoSure Mentorship session, if you feel you need extra support.
+
+If you have any questions or need assistance, please reach out to us anytime at hello@hosposure.com.au.
+
+HospoSure | Your cafe with confidence
+
+LinkedIn linkedin.com/company/hosposure
+
+Privacy Policy hosposure.com.au/privacy.html
+Terms & Conditions hosposure.com.au/terms.html
+
+Copyright &copy; 2024 HospoSure Pty Ltd. hosposure.com.au
+All rights reserved.

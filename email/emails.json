@@ -11,8 +11,32 @@
     "name": "subscription-started",
     "subject": "Congratulations on your HospoSure subscription"
   },
+  "subscription-cancelled": {
+    "name": "subscription-cancelled",
+    "subject": "Your HospoSure subscription has been cancelled"
+  },
+  "subscription-expiration-warning": {
+    "name": "subscription-expiration-warning",
+    "subject": "Heads up, your HospoSure subscription is about to expire"
+  },
   "subscription-expired": {
     "name": "subscription-expired",
-    "subject": "Your HospoSure subscription has expired"
+    "subject": "Your HospoSure subscription has now expired"
+  },
+  "subscription-renewed": {
+    "name": "subscription-renewed",
+    "subject": "Your HospoSure subscription has renewed"
+  },
+  "subscription-quantity-increased": {
+    "name": "subscription-quantity-increased",
+    "subject": "Your HospoSure subscription has increased"
+  },
+  "subscription-quantity-decreased": {
+    "name": "subscription-quantity-decreased",
+    "subject": "Your HospoSure subscription has decreased"
+  },
+  "demo-nudge": {
+    "name": "demo-nudge",
+    "subject": "What did you think of HospoSure?"
   }
 }
