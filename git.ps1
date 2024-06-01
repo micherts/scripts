@@ -1,3 +1,3 @@
 git add .
-git commit -m 'added multiple email templates'
+git commit -m 'added final email templates'
 git push origin master

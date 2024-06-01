@@ -27,12 +27,12 @@
     "name": "subscription-renewed",
     "subject": "Your HospoSure subscription has renewed"
   },
-  "subscription-quantity-increased": {
-    "name": "subscription-quantity-increased",
+  "subscription-increased": {
+    "name": "subscription-increased",
     "subject": "Your HospoSure subscription has increased"
   },
-  "subscription-quantity-decreased": {
-    "name": "subscription-quantity-decreased",
+  "subscription-decreased": {
+    "name": "subscription-decreased",
     "subject": "Your HospoSure subscription has decreased"
   },
   "demo-nudge": {

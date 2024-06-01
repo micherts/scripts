@@ -1,6 +1,6 @@
 Hi {{name}},
 
-We wanted to let you know your HospoSure subscription has now expired. If this was a mistake, feel free to resubscribe below. If not, we’re sorry to say goodbye.
+We wanted to let you know your HospoSure subscription has now expired. If this was a mistake, feel free to resubscribe below. If not, we're sorry to say goodbye.
 
 Go to app.hosposure.com.au/profile/account to resubscribe.
 
