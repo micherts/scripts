@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Dark Mode meta tags to enable Dark Mode in email client user agents -->
+    <meta name="color-scheme" content="light dark" />
+    <meta name="supported-color-schemes" content="light dark only" />
+    <style>
+      /* Dark Mode :root style to enable Dark Mode in email client user agents */
+      :root {
+        color-scheme: light dark;
+      }
+      body {
+        margin: 0;
+        font-family: helvetica, arial, sans-serif;
+        background-color: transparent;
+      }
+      .page {
+        max-width: 700px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      img.banner {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      p,
+      tr,
+      .img {
+        text-align: center;
+      }
+      p,
+      td {
+        line-height: 24px;
+        letter-spacing: 0;
+        font-size: 14px;
+        color: #000;
+        margin: 14px 0 0;
+      }
+      td.icon {
+        width: 100px;
+        color: #8596b8;
+        text-align: center;
+      }
+      p.code {
+        font-size: 30px;
+        letter-spacing: 10px;
+      }
+      h2 {
+        margin-top: 30px;
+        font-size: 16px;
+        color: #000;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        color: #54af50 !important;
+      }
+      a.button {
+        color: #fff !important;
+        font-size: 20px;
+        padding: 10px 30px 10px 30px;
+        display: inline-block;
+        background: #54af50;
+        border-radius: 5px;
+        width: auto;
+        /* text-align: center; */
+        margin: 14px auto;
+      }
+      footer {
+        margin-top: 30px;
+      }
+      footer p,
+      footer a {
+        font-size: 14px;
+        color: #8596b8 !important;
+      }
+      /* Dark Mode media queries to target Apple and iOS */
+      @media (prefers-color-scheme: dark) {
+        /* body {
+          background-color: #1a2035;
+        } */
+        h2,
+        p,
+        td {
+          color: #fff;
+        }
+      }
+      /* Dark Mode media queries to target some Android and Outlook.com  */
+      /* targets background styles */
+      /* [data-ogsb] body {
+        background-color: #1a2035;
+      } */
+      /* targets color styles */
+      /* [data-ogsc] h2,
+      p,
+      td {
+        color: #fff;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <img
+        src="https://hosposure.com.au/img/email/subscription-increased.png"
+        class="banner"
+        alt="A row of indoor pot plants on a shelf."
+      /> 
+<h2>Hi {{name}},</h2>
+<p>
+  We have upgraded your subscription with additional venues as you requested. It
+  looks like you're making great progress, you're all set to continue modelling
+  with your new venues.
+</p>
+<a
+  href="https://app.hosposure.com.au"
+  id="sign-in-button"
+  class="button"
+  data-button="success"
+  >Sign In</a
+>
+<table>
+  <tr>
+    <td class="text-block-right">
+      <h2>Scaling & Expansion</h2>
+      <p>
+        Are you looking to open a second venue or expand into multiple venues?
+        If so, congratulations, it's vital to get support here before you go
+        ahead, so we can ensure your first venue is nailed down.
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="text-block-left">
+      <h2>Different Business Models</h2>
+      <p>
+        Have you thought of experimenting with different business models and
+        want to compare them? Increase your subscription quantity and you can
+        use the new venues to compare different ideas and concepts.
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="text-block-right">
+      <h2>Expert Cafe Mentorship</h2>
+      <p>
+        If you need expert guidance on how to scale, expand, or cross-model your
+        cafe venue, our partners at
+        <a target="_blank" href="https://clevercafecompany.com.au"
+          >Clever Cafe Company</a
+        >
+        can help you with subsidised mentorship.
+      </p>
+    </td>
+  </tr>
+</table>
+<p>
+  We're stoked you're here and want to make your startup or established cafe the
+  best it can be. If you have any questions or need assistance along the way,
+  please reach out to us anytime at
+  <a target="_blank" href="mailto:hello@hosposure.com.au"
+    >hello@hosposure.com.au</a
+  >. Take good care and enjoy the journey!
+</p>
+
+      <footer>
+        <div class="img">
+          <a target="_blank" href="https://hosposure.com.au"
+            ><img
+              src="https://hosposure.com.au/img/hospoSureLogo.png"
+              alt="HospoSure | Your cafe with confidence"
+              width="342"
+          /></a>
+        </div>
+        <div>
+          <a target="_blank" href="https://www.linkedin.com/company/hosposure">
+            <img
+              src="https://hosposure.com.au/img/email/linkedin-brands.png"
+              alt="Follow HospoSure on LinkedIn"
+          /></a>
+        </div>
+        <p>
+          <a target="_blank" href="https://hosposure.com.au/privacy.html"
+            >Privacy Policy</a
+          >
+          |
+          <a target="_blank" href="https://hosposure.com.au/terms.html"
+            >Terms &amp; Conditions</a
+          >
+        </p>
+        <p>
+          Copyright &copy; 2024
+          <a target="_blank" href="https://hosposure.com.au"
+            >HospoSure Pty Ltd</a
+          >. <br />All rights reserved.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

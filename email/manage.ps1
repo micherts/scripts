@@ -12,8 +12,8 @@ $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
         "Template" = @{
             "TemplateName" = $email.name
             "SubjectPart"  = $email.subject
-            "HtmlPart"     = Get-Content ".\template-$($email.name).html" -Raw
-            "TextPart"     = Get-Content ".\template-$($email.name).txt" -Raw
+            "HtmlPart"     = Get-Content ".\out\template-$($email.name).html" -Raw
+            "TextPart"     = Get-Content ".\out\template-$($email.name).txt" -Raw
         }
     } | ConvertTo-Json | Out-File ".\template-$($email.name).json" -verbose
 }
@@ -32,8 +32,8 @@ $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
             "Destination"  = @{
                 # "ToAddresses" = @("michael.roberts@hosposure.com.au", "micherts@me.com")
                 # "ToAddresses" = @("michael.roberts@hosposure.com.au")
-                # "ToAddresses" = @("micherts@me.com")
-                "ToAddresses" = @("tim.noye@hosposure.com.au")
+                "ToAddresses" = @("micherts@me.com")
+                # "ToAddresses" = @("tim.noye@hosposure.com.au")
             }
             "TemplateData" = @{
                 # name     = "Michael"
@@ -46,6 +46,3 @@ $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
     Start-Sleep -Seconds 5;
 }
 
-# Next steps
-# Format account-verified template
-# Update stripeWebhook to include email actions

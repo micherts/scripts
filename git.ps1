@@ -1,3 +1,3 @@
 git add .
-git commit -m 'added final email templates'
+git commit -m 'implemented 11ty for email templates'
 git push origin master
