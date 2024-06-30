@@ -188,10 +188,12 @@ const deleteSubscription = async (email, env) => {
     );
 
     // Group Memberships		Remove user from Template
-    templateGroups.forEach((GroupName) =>
-      removeUserFromGroup(
-        { Username: userProfileId, GroupName, UserPoolId },
-        `userGroup: ${GroupName} REMOVE USER ${userProfileId}.`
+    await Promise.all(
+      templateGroups.forEach((GroupName) =>
+        removeUserFromGroup(
+          { Username: userProfileId, GroupName, UserPoolId },
+          `userGroup: ${GroupName} REMOVE USER ${userProfileId}.`
+        )
       )
     );
   });

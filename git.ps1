@@ -1,3 +1,3 @@
 git add .
-git commit -m 'implemented 11ty for email templates'
+git commit -m 'updated node script to await promise all on remove from template groups'
 git push origin master
