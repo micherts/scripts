@@ -1,6 +1,6 @@
 $emails = Get-Content .\emails.json | ConvertFrom-Json
 
-# Use Stripo to create and export the HTML template and save as template-$name.html.
+# Use Stripo or manually to create and export the HTML template and save as template-$name.html.
 # Manually create the txt template and save as template-$name.txt.
 
 # $email = $emails.'verification-code'
@@ -43,6 +43,6 @@ $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
                 date     = "Friday 7-Jun-24"
             } | ConvertTo-Json
         } | ConvertTo-Json);
-    Start-Sleep -Seconds 5;
+    # Start-Sleep -Seconds 5;
 }
 

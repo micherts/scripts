@@ -20,7 +20,7 @@ For ($i = 0; $i -lt 12; $i++) {
 # DynamoDB Table Backfill https://docs.amplify.aws/cli/graphql/troubleshooting/#backfill-opensearch-index-from-dynamodb-table
 pip3 install boto3
 
-$selectedEnv = $env.prod
+$selectedEnv = $env.staging
 #Backfill all @searchable tables
 $selectedEnv.ops.PSObject.Properties.Value | % { & python ".\ddb_to_es.py" --rn 'ap-southeast-2' --lf $selectedEnv.config.streamingLambda --tn $_.tn --esarn $_.esarn }
 #Backfill selected table

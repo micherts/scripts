@@ -1,115 +1,129 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Dark Mode meta tags to enable Dark Mode in email client user agents -->
-    <meta name="color-scheme" content="light dark" />
-    <meta name="supported-color-schemes" content="light dark only" />
-    <style>
-      /* Dark Mode :root style to enable Dark Mode in email client user agents */
-      :root {
-        color-scheme: light dark;
-      }
-      body {
-        margin: 0;
-        font-family: helvetica, arial, sans-serif;
-        background-color: transparent;
-      }
-      .page {
-        max-width: 700px;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      img.banner {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      p,
-      tr,
-      .img {
-        text-align: center;
-      }
-      p,
-      td {
-        line-height: 24px;
-        letter-spacing: 0;
-        font-size: 14px;
-        color: #000;
-        margin: 14px 0 0;
-      }
-      td.icon {
-        width: 100px;
-        color: #8596b8;
-        text-align: center;
-      }
-      p.code {
-        font-size: 30px;
-        letter-spacing: 10px;
-      }
-      h2 {
-        margin-top: 30px;
-        font-size: 16px;
-        color: #000;
-        text-align: center;
-      }
-      a {
-        text-decoration: none;
-        color: #54af50 !important;
-      }
-      a.button {
-        color: #fff !important;
-        font-size: 20px;
-        padding: 10px 30px 10px 30px;
-        display: inline-block;
-        background: #54af50;
-        border-radius: 5px;
-        width: auto;
-        /* text-align: center; */
-        margin: 14px auto;
-      }
-      footer {
-        margin-top: 30px;
-      }
-      footer p,
-      footer a {
-        font-size: 14px;
-        color: #8596b8 !important;
-      }
-      /* Dark Mode media queries to target Apple and iOS */
-      @media (prefers-color-scheme: dark) {
-        /* body {
+
+<head>
+  <!-- Dark Mode meta tags to enable Dark Mode in email client user agents -->
+  <meta name="color-scheme" content="light dark" />
+  <meta name="supported-color-schemes" content="light dark only" />
+  <style>
+    /* Dark Mode :root style to enable Dark Mode in email client user agents */
+    :root {
+      color-scheme: light dark;
+    }
+
+    body {
+      margin: 0;
+      font-family: helvetica, arial, sans-serif;
+      background-color: transparent;
+    }
+
+    .page {
+      max-width: 700px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    img.banner {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    p,
+    tr,
+    .img {
+      text-align: center;
+    }
+
+    p,
+    td {
+      line-height: 24px;
+      letter-spacing: 0;
+      font-size: 14px;
+      color: #000;
+      margin: 14px 0 0;
+    }
+
+    td.icon {
+      width: 100px;
+      color: #8596b8;
+      text-align: center;
+    }
+
+    p.code {
+      font-size: 30px;
+      letter-spacing: 10px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #000;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: #54af50 !important;
+    }
+
+    a.button {
+      color: #fff !important;
+      font-size: 20px;
+      padding: 10px 30px 10px 30px;
+      display: inline-block;
+      background: #54af50;
+      border-radius: 5px;
+      width: auto;
+      /* text-align: center; */
+      margin: 14px auto;
+    }
+
+    footer {
+      margin-top: 30px;
+    }
+
+    footer p,
+    footer a {
+      font-size: 14px;
+      color: #8596b8 !important;
+    }
+
+    /* Dark Mode media queries to target Apple and iOS */
+    @media (prefers-color-scheme: dark) {
+
+      /* body {
           background-color: #1a2035;
         } */
-        h2,
-        p,
-        td {
-          color: #fff;
-        }
+      h2,
+      p,
+      td {
+        color: #fff;
       }
-      /* Dark Mode media queries to target some Android and Outlook.com  */
-      /* targets background styles */
-      /* [data-ogsb] body {
+    }
+
+    /* Dark Mode media queries to target some Android and Outlook.com  */
+    /* targets background styles */
+    /* [data-ogsb] body {
         background-color: #1a2035;
       } */
-      /* targets color styles */
-      /* [data-ogsc] h2,
+    /* targets color styles */
+    /* [data-ogsc] h2,
       p,
       td {
         color: #fff;
       } */
-    </style>
-  </head>
-  <body>
-    <div class="page">
-      <img
-        src="https://hosposure.com.au/img/email/subscription-expiration-warning.png"
-        class="banner"
-        alt="Barista heating milk at coffee machine."
-      /> 
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <img src="https://hosposure.com.au/img/banners/barista-heating-milk700x376.png" class="banner"
+      alt="Barista heating milk at coffee machine." /> 
 <h2>Hi {{name}},</h2>
 <p>
   We wanted to let you know your HospoSure subscription is set to expire on {{date}}. If this was a mistake, feel free to resubscribe
@@ -166,38 +180,26 @@
   >.
 </p>
 
-      <footer>
-        <div class="img">
-          <a target="_blank" href="https://hosposure.com.au"
-            ><img
-              src="https://hosposure.com.au/img/hospoSureLogo.png"
-              alt="HospoSure | Your cafe with confidence"
-              width="342"
-          /></a>
-        </div>
-        <div>
-          <a target="_blank" href="https://www.linkedin.com/company/hosposure">
-            <img
-              src="https://hosposure.com.au/img/email/linkedin-brands.png"
-              alt="Follow HospoSure on LinkedIn"
-          /></a>
-        </div>
-        <p>
-          <a target="_blank" href="https://hosposure.com.au/privacy"
-            >Privacy Policy</a
-          >
-          |
-          <a target="_blank" href="https://hosposure.com.au/terms"
-            >Terms &amp; Conditions</a
-          >
-        </p>
-        <p>
-          Copyright &copy; 2024
-          <a target="_blank" href="https://hosposure.com.au"
-            >HospoSure Pty Ltd</a
-          >. <br />All rights reserved.
-        </p>
-      </footer>
-    </div>
-  </body>
+    <footer>
+      <div class="img">
+        <a target="_blank" href="https://hosposure.com.au"><img src="https://hosposure.com.au/img/hospoSureLogo.png"
+            alt="HospoSure | Your cafe with confidence" width="342" /></a>
+      </div>
+      <div>
+        <a target="_blank" href="https://www.linkedin.com/company/hosposure">
+          <img src="https://hosposure.com.au/img/icons/linkedin.png" alt="Follow HospoSure on LinkedIn" /></a>
+      </div>
+      <p>
+        <a target="_blank" href="https://hosposure.com.au/privacy">Privacy Policy</a>
+        |
+        <a target="_blank" href="https://hosposure.com.au/terms">Terms &amp; Conditions</a>
+      </p>
+      <p>
+        Copyright &copy; 2024
+        <a target="_blank" href="https://hosposure.com.au">HospoSure Pty Ltd</a>. <br />All rights reserved.
+      </p>
+    </footer>
+  </div>
+</body>
+
 </html>

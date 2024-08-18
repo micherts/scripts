@@ -1,0 +1,86 @@
+{
+  "laptop-outdoors-beverage": {
+    "original": "laptop-outdoors-beverage.jpg",
+    "web": "laptop-outdoors-beverage1076x500.png",
+    "email": "laptop-outdoors-beverage700x376.png",
+    "alt": "Person working on a laptop outdoors with a takeaway beverage."
+  },
+  "egg-toast-avocado": {
+    "original": "egg-toast-avocado.jpg",
+    "web": "egg-toast-avocado1076x500.png",
+    "email": "egg-toast-avocado700x376.png",
+    "alt": "Boiled egg on toast with avocado."
+  },
+  "person-looking-cookbook": {
+    "original": "person-looking-cookbook.jpg",
+    "web": "person-looking-cookbook1076x500.png",
+    "email": "person-looking-cookbook700x376.png",
+    "alt": "Person looking through a cookbook."
+  },
+  "waitresses-chatting-cafe": {
+    "original": "waitresses-chatting-cafe.jpg",
+    "web": "waitresses-chatting-cafe1076x500.png",
+    "email": "waitresses-chatting-cafe700x376.png",
+    "alt": "Friendly young diverse waitresses chatting during work in a cafe."
+  },
+  "six-baked-breads": {
+    "original": "six-baked-breads.jpg",
+    "web": "six-baked-breads700x376.png",
+    "email": "six-baked-breads700x376.png",
+    "alt": "Six baked breads."
+  },
+  "man-woman-working": {
+    "original": "man-woman-working.jpg",
+    "web": "man-woman-working1076x500.png",
+    "email": "man-woman-working700x376.png",
+    "alt": "Man and woman working together."
+  },
+  "smiling-woman-laptop": {
+    "original": "smiling-woman-laptop.jpg",
+    "web": "smiling-woman-laptop1076x500.png",
+    "email": "smiling-woman-laptop700x376.png",
+    "alt": "Smiling woman working on a laptop."
+  },
+  "man-making-coffee": {
+    "original": "man-making-coffee.jpg",
+    "web": "man-making-coffee1076x500.png",
+    "email": "man-making-coffee700x376.png",
+    "alt": "Man making coffee with a waitress smiling."
+  },
+  "barista-heating-milk": {
+    "original": "barista-heating-milk.jpg",
+    "email": "barista-heating-milk700x376.png",
+    "web": "barista-heating-milk1076x500.png",
+    "alt": "Barista heating milk at coffee machine."
+  },
+  "barista-working-back": {
+    "original": "barista-working-back.jpg",
+    "email": "barista-working-back700x376.png",
+    "alt": "Barista working with back to camera."
+  },
+  "plants-row-shelf": {
+    "original": "plants-row-shelf.jpg",
+    "email": "plants-row-shelf700x376.png",
+    "alt": "Indoor pot plants in a row on a shelf."
+  },
+  "laptop-you-got": {
+    "original": "laptop-you-got.jpg",
+    "email": "laptop-you-got700x376.png",
+    "alt": "Laptop in front of a sign stating You Got This in capital letters."
+  },
+  "man-looking-lake": {
+    "original": "man-looking-lake.jpg",
+    "email": "man-looking-lake700x376.png",
+    "alt": "Man seen from behind looking out over a lake."
+  },
+  "people-busy-cafe": {
+    "original": "people-busy-cafe.jpg",
+    "email": "people-busy-cafe700x376.png",
+    "alt": "People dining in a busy cafe."
+  },
+  "woman-laptop-outside": {
+    "original": "woman-laptop-outside.jpg",
+    "email": "woman-laptop-outside700x376.png",
+    "alt": "Woman working on a laptop outside a cafe."
+  }
+}
