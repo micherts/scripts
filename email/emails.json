@@ -38,5 +38,9 @@
   "demo-nudge": {
     "name": "demo-nudge",
     "subject": "What did you think of HospoSure?"
+  },
+  "error-report": {
+    "name": "error-report",
+    "subject": "Error report"
   }
 }

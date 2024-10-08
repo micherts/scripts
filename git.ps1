@@ -1,3 +1,3 @@
 git add .
-git commit -m 'updated email templates footer for linkedIn img'
+git commit -m 'updated email template for error-report'
 git push origin master

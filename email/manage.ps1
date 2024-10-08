@@ -7,6 +7,7 @@ $emails = Get-Content .\emails.json | ConvertFrom-Json
 # $email = $emails.'account-verified'
 # $email = $emails.'subscription-decreased'
 # $email = $emails.'subscription-expiration-warning'
+# $email = $emails.'error-report'
 $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
     @{
         "Template" = @{
@@ -19,10 +20,10 @@ $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
 }
 
 $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
-    #aws ses create-template --cli-input-json "file://template-$($email.name).json"
+    # aws ses create-template --cli-input-json "file://template-$($email.name).json"
     aws ses update-template --cli-input-json "file://template-$($email.name).json"
-    #aws ses list-templates 
-    #aws ses delete-template --template-name $email.name
+    # aws ses list-templates 
+    # aws ses delete-template --template-name $email.name
 }
 
 $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
@@ -31,8 +32,8 @@ $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
             "Template"     = $email.name
             "Destination"  = @{
                 # "ToAddresses" = @("michael.roberts@hosposure.com.au", "micherts@me.com")
-                # "ToAddresses" = @("michael.roberts@hosposure.com.au")
-                "ToAddresses" = @("micherts@me.com")
+                "ToAddresses" = @("michael.roberts@hosposure.com.au")
+                # "ToAddresses" = @("micherts@me.com")
                 # "ToAddresses" = @("tim.noye@hosposure.com.au")
             }
             "TemplateData" = @{
@@ -41,6 +42,9 @@ $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
                 code     = "1234" 
                 username = "youremail@email.com"
                 date     = "Friday 7-Jun-24"
+                email    = "test@email.com"
+                action   = "I don't know what I did!"
+                error    = "This is a big error."
             } | ConvertTo-Json
         } | ConvertTo-Json);
     # Start-Sleep -Seconds 5;
