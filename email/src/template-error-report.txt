@@ -1,7 +1,6 @@
 User: {{email}}
-Action: {{action}}
-
-{{error}}
+User Action Description: {{action}}
+Error Details: {{error}}
 
 
 HospoSure | Your cafe with confidence
