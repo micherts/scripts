@@ -1,3 +1,9 @@
+$project = "scripts\email"
+$wl = "${Home}\Documents\Code\$project"
+Set-Location $wl
+
+npm start
+
 $emails = Get-Content .\emails.json | ConvertFrom-Json
 
 # Use Stripo or manually to create and export the HTML template and save as template-$name.html.
@@ -16,12 +22,12 @@ $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
             "HtmlPart"     = Get-Content ".\out\template-$($email.name).html" -Raw
             "TextPart"     = Get-Content ".\out\template-$($email.name).txt" -Raw
         }
-    } | ConvertTo-Json | Out-File ".\template-$($email.name).json" -verbose
+    } | ConvertTo-Json | Out-File ".\json\template-$($email.name).json" -verbose
 }
 
 $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
-    # aws ses create-template --cli-input-json "file://template-$($email.name).json"
-    aws ses update-template --cli-input-json "file://template-$($email.name).json"
+    # aws ses create-template --cli-input-json "file://json/template-$($email.name).json"
+    aws ses update-template --cli-input-json "file://json/template-$($email.name).json"
     # aws ses list-templates 
     # aws ses delete-template --template-name $email.name
 }
