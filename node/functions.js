@@ -189,7 +189,7 @@ const deleteSubscription = async (email, env) => {
 
     // Group Memberships		Remove user from Template
     await Promise.all(
-      templateGroups.forEach((GroupName) =>
+      templateGroups.map((GroupName) =>
         removeUserFromGroup(
           { Username: userProfileId, GroupName, UserPoolId },
           `userGroup: ${GroupName} REMOVE USER ${userProfileId}.`

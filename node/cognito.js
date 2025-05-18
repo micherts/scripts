@@ -9,8 +9,9 @@ import {
   DeleteGroupCommand,
 } from "@aws-sdk/client-cognito-identity-provider";
 import { v4 as uuidv4 } from "uuid";
+import { region } from "./env.js";
 
-const client = new CognitoIdentityProviderClient();
+const client = new CognitoIdentityProviderClient({ region });
 
 const cl = (a, b) => (a ? console.log(a, b || "") : null);
 
