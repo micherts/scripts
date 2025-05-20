@@ -8,5 +8,5 @@ git clone git@github.com:micherts/$project.git
 # Update
 Set-Location $wl
 git add .
-git commit -m 'updated email template for error-report to left align and remove customer items'
+git commit -m 'updated node functions deleteSubscription to remove all memberships instead of just the first.'
 git push origin master

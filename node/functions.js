@@ -61,8 +61,7 @@ const copyTemplatesBetweenEnv = (fromEnv, toEnv) => {
             TableName: toEnv.ops[table],
             Item,
           },
-          `Copying ${table} ${Item[table] || Item.id} from ${fromEnv.name} to ${
-            toEnv.name
+          `Copying ${table} ${Item[table] || Item.id} from ${fromEnv.name} to ${toEnv.name
           }.`
         )
       );
@@ -165,21 +164,21 @@ const deleteSubscription = async (email, env) => {
 
     // Membership	ownerId = UserProfile.id	Delete items
     TableName = env.config.membership;
-    const { id } = (
+    const memberships = (
       await scanDC(
         {
           TableName,
         },
         `table: ${TableName} SCAN (for ownerId ${userProfileId}).`
       )
-    ).filter(({ ownerId }) => ownerId === userProfileId)[0] || {
+    ).filter(({ ownerId }) => ownerId === userProfileId) || [{
       id: undefined,
-    };
+    }];
 
-    deleteItem(
+    memberships.forEach(({ id }) => deleteItem(
       { TableName, Key: { id } },
       `table: ${TableName} id: ${id} DELETE.`
-    );
+    ));
 
     // Group Memberships		Delete subscribed group (may not want to delete in PROD)
     const { UserPoolId, templateGroups } = env.config;

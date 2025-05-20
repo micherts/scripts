@@ -3,7 +3,7 @@ import { staging } from "./env.js";
 
 // Customer Deletion
 // First manually delete customer from Stripe
-const email = "602.sunday@gmail.com";
+const email = "mjrobertsIT@gmail.com";
 await deleteSubscription(email, staging);
 deleteUser(email, staging);
 

@@ -32,13 +32,13 @@ const addUserToGroup = async ({ userGroup, userId, UserPoolId }, log) => {
 const addUserToGroups = ({ userId, groups, UserPoolId }) =>
   userId
     ? Promise.all(
-        groups.map((userGroup) =>
-          addUserToGroup(
-            { userGroup, userId, UserPoolId },
-            `Add user ${userId} to group ${userGroup}.`
-          )
+      groups.map((userGroup) =>
+        addUserToGroup(
+          { userGroup, userId, UserPoolId },
+          `Add user ${userId} to group ${userGroup}.`
         )
       )
+    )
     : undefined;
 
 const addUserToTemplateGroups = (
@@ -48,11 +48,15 @@ const addUserToTemplateGroups = (
 
 const removeUserFromGroup = async (params, log) => {
   // params = {Username, GroupName, UserPoolId}
-  cl(log);
-  const {
-    $metadata: { httpStatusCode },
-  } = await client.send(new AdminRemoveUserFromGroupCommand(params));
-  cl(log, getReasonPhrase(httpStatusCode));
+  try {
+    cl(log);
+    const {
+      $metadata: { httpStatusCode },
+    } = await client.send(new AdminRemoveUserFromGroupCommand(params));
+    cl(log, getReasonPhrase(httpStatusCode));
+  } catch (e) {
+    cl(log, e.message);
+  }
 };
 
 // const removeUserFromGroups = ({ userId, groups }) =>
