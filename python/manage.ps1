@@ -1,3 +1,7 @@
+# Install Python
+# Install PIP from https://bootstrap.pypa.io/pip/pip.pyz
+# Re-init path
+
 # Python Scripts
 # Tables & Streams
 $env = Get-Content .\env.json | ConvertFrom-Json
@@ -21,9 +25,8 @@ For ($i = 0; $i -lt 12; $i++) {
 pip3 install boto3
 
 $selectedEnv = $env.staging
-#Backfill all @searchable tables
+#Backfill all ops tables
 $selectedEnv.ops.PSObject.Properties.Value | % { & python ".\ddb_to_es.py" --rn 'ap-southeast-2' --lf $selectedEnv.config.streamingLambda --tn $_.tn --esarn $_.esarn }
 #Backfill selected table
-$selectedTable = "operation"
-$selectedEnv.ops.$selectedTable | % { & python ".\ddb_to_es.py" --rn 'ap-southeast-2' --lf $selectedEnv.config.streamingLambda --tn $_.tn --esarn $_.esarn }
+$selectedEnv.admin.action | % { & python ".\ddb_to_es.py" --rn 'ap-southeast-2' --lf $selectedEnv.config.streamingLambda --tn $_.tn --esarn $_.esarn }
 # if lambda errors, see https://github.com/aws-amplify/amplify-category-api/issues/1217, remove _type parameter from 3 locations in the lambda code
