@@ -8,5 +8,5 @@ git clone git@github.com:micherts/$project.git
 # Update
 Set-Location $wl
 git add .
-git commit -m 'updated node functions deleteSubscription to remove all memberships instead of just the first.'
+git commit -m 'created 3 new template emails for additional-user functions'
 git push origin master

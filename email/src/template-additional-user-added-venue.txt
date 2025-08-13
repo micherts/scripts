@@ -1,0 +1,19 @@
+Hi {{name}},
+
+You have been added by {{owner}} as a user of the venue {{venue}} on HospoSure.
+
+Go to app.hosposure.com.au to view your new venue.
+
+If you have any questions, please contact {{owner}} directly. Alternatively, if you believe this was done in error, please reach out to us at hello@hosposure.com.au.
+
+Thank you for being part of HospoSure!
+
+HospoSure | Your cafe with confidence
+
+LinkedIn linkedin.com/company/hosposure
+
+Privacy Policy hosposure.com.au/privacy.html
+Terms & Conditions hosposure.com.au/terms.html
+
+Copyright &copy; 2025 HospoSure Pty Ltd. hosposure.com.au
+All rights reserved.

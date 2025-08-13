@@ -14,6 +14,9 @@ $emails = Get-Content .\emails.json | ConvertFrom-Json
 # $email = $emails.'subscription-decreased'
 # $email = $emails.'subscription-expiration-warning'
 # $email = $emails.'error-report'
+# $email = $emails.'additional-user-invitation'
+# $email = $emails.'additional-user-added-venue'
+# $email = $emails.'additional-user-removed-venue'
 $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
     @{
         "Template" = @{
@@ -51,6 +54,8 @@ $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
                 email    = "test@email.com"
                 action   = "I don't know what I did!"
                 error    = "This is a big error."
+                venue    = "Test Venue"
+                owner    = "Test Owner"
             } | ConvertTo-Json
         } | ConvertTo-Json);
     # Start-Sleep -Seconds 5;

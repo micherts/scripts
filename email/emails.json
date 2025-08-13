@@ -1,4 +1,8 @@
 {
+  "error-report": {
+    "name": "error-report",
+    "subject": "Error report"
+  },
   "verification-code": {
     "name": "verification-code",
     "subject": "Your HospoSure verification code"
@@ -39,8 +43,16 @@
     "name": "demo-nudge",
     "subject": "What did you think of HospoSure?"
   },
-  "error-report": {
-    "name": "error-report",
-    "subject": "Error report"
+  "additional-user-invitation": {
+    "name": "additional-user-invitation",
+    "subject": "You've been invited to access HospoSure"
+  },
+  "additional-user-added-venue": {
+    "name": "additional-user-added-venue",
+    "subject": "You've been added to a new venue on HospoSure"
+  },
+  "additional-user-removed-venue": {
+    "name": "additional-user-removed-venue",
+    "subject": "Venue removed from your HospoSure account"
   }
 }

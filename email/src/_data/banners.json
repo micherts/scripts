@@ -25,7 +25,7 @@
   },
   "six-baked-breads": {
     "original": "six-baked-breads.jpg",
-    "web": "six-baked-breads700x376.png",
+    "web": "six-baked-breads1076x500.png",
     "email": "six-baked-breads700x376.png",
     "alt": "Six baked breads."
   },
@@ -82,5 +82,36 @@
     "original": "woman-laptop-outside.jpg",
     "email": "woman-laptop-outside700x376.png",
     "alt": "Woman working on a laptop outside a cafe."
+  },
+  "square-stand": {
+    "web": "square-stand1076x500.webp",
+    "alt": "Man collecting food delivery from womain next to a Square POS."
+  },
+  "woman-baguette-map": {
+    "web": "woman-baguette-map1076x500.webp",
+    "alt": "Woman holding a baguette whilst reading a map."
+  },
+  "council-meeting": {
+    "web": "council-meeting1076x500.webp",
+    "alt": "Group of people holding a meeting."
+  },
+  "men-conversation": {
+    "web": "men-conversation1076x500.webp",
+    "alt": "Two men in conversation seated on arm chairs."
+  },
+  "barista-preparing-coffee": {
+    "original": "barista-preparing-coffee.jpg",
+    "email": "barista-preparing-coffee700x376.png",
+    "alt": "Barista using a coffee machine to prepare a coffee."
+  },
+  "coffee-machine-working": {
+    "original": "coffee-machine-working.jpg",
+    "email": "coffee-machine-working700x376.png",
+    "alt": "Coffee machine pouring coffee."
+  },
+  "barista-making-coffee": {
+    "original": "barista-making-coffee.jpg",
+    "email": "barista-making-coffee700x376.png",
+    "alt": "Barista using a coffee machine to prepare a coffee."
   }
 }
