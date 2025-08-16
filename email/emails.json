@@ -43,10 +43,6 @@
     "name": "demo-nudge",
     "subject": "What did you think of HospoSure?"
   },
-  "additional-user-invitation": {
-    "name": "additional-user-invitation",
-    "subject": "You've been invited to access HospoSure"
-  },
   "additional-user-added-venue": {
     "name": "additional-user-added-venue",
     "subject": "You've been added to a new venue on HospoSure"

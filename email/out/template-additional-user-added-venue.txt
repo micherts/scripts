@@ -2,7 +2,9 @@ Hi {{name}},
 
 You have been added by {{owner}} as a user of the venue {{venue}} on HospoSure.
 
-Go to app.hosposure.com.au to view your new venue.
+Go to app.hosposure.com.au to join the team.
+
+You must sign in with the same email address as used for this message.
 
 If you have any questions, please contact {{owner}} directly. Alternatively, if you believe this was done in error, please reach out to us at hello@hosposure.com.au.
 

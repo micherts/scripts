@@ -8,5 +8,5 @@ git clone git@github.com:micherts/$project.git
 # Update
 Set-Location $wl
 git add .
-git commit -m 'created 3 new template emails for additional-user functions'
+git commit -m 'removed additional-user-invitation email template, updated additional-user-added-venue email template'
 git push origin master
