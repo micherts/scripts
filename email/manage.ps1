@@ -10,7 +10,7 @@ $emails = Get-Content .\emails.json | ConvertFrom-Json
 # Manually create the txt template and save as template-$name.txt.
 
 # $email = $emails.'verification-code'
-# $email = $emails.'account-verified'
+# $email = $emails.'new-user-account-verified'
 # $email = $emails.'subscription-decreased'
 # $email = $emails.'subscription-expiration-warning'
 # $email = $emails.'error-report'
@@ -30,7 +30,7 @@ $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
 
 $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
     # aws ses create-template --cli-input-json "file://json/template-$($email.name).json"
-    aws ses update-template --cli-input-json "file://json/template-$($email.name).json"
+     aws ses update-template --cli-input-json "file://json/template-$($email.name).json"
     # aws ses list-templates 
     # aws ses delete-template --template-name $email.name
 }

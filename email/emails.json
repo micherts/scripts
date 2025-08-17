@@ -7,8 +7,8 @@
     "name": "verification-code",
     "subject": "Your HospoSure verification code"
   },
-  "account-verified": {
-    "name": "account-verified",
+  "new-user-account-verified": {
+    "name": "new-user-account-verified",
     "subject": "Welcome to HospoSure"
   },
   "subscription-started": {
