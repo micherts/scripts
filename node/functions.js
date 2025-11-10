@@ -1,7 +1,7 @@
 import { putDC, updateDC, scanDC, deleteItem } from "./dynamo.js";
 import { delUser, deleteGroup, removeUserFromGroup } from "./cognito.js";
 
-const deleteItemsFromGroups = async (table, groups, included) => {
+export const deleteItemsFromGroups = async (table, groups, included) => {
   const existing = await scanDC({
     TableName: table,
   });
@@ -20,7 +20,7 @@ const deleteItemsFromGroups = async (table, groups, included) => {
     );
 };
 
-const addParam = async (table, param) => {
+export const addParam = async (table, param) => {
   const existing = await scanDC({
     TableName: table,
   });
@@ -35,7 +35,7 @@ const addParam = async (table, param) => {
   );
 };
 
-const copyAdminDataFromStagingToProd = (env) => {
+export const copyAdminDataFromStagingToProd = (env) => {
   Object.entries(env.admin).forEach(async ([table, TableName]) => {
     const stagingTableItems = await scanDC({ TableName });
     stagingTableItems.forEach((Item) =>
@@ -50,7 +50,7 @@ const copyAdminDataFromStagingToProd = (env) => {
   });
 };
 
-const copyTemplatesBetweenEnv = (fromEnv, toEnv) => {
+export const copyTemplatesBetweenEnv = (fromEnv, toEnv) => {
   Object.entries(fromEnv.ops).forEach(async ([table, TableName]) => {
     const stagingTableItems = await scanDC({ TableName });
     stagingTableItems
@@ -68,7 +68,7 @@ const copyTemplatesBetweenEnv = (fromEnv, toEnv) => {
   });
 };
 
-const renameParameter = async (table, from, to) => {
+export const renameParameter = async (table, from, to) => {
   const existing = await scanDC({
     TableName: table,
   });
@@ -89,7 +89,7 @@ const renameParameter = async (table, from, to) => {
     });
 };
 
-const deleteSubscription = async (email, env) => {
+export const deleteSubscription = async (email, env) => {
   // first manually delete customer from Stripe
   // this function deletes membership, venues, and entries
 
@@ -198,7 +198,7 @@ const deleteSubscription = async (email, env) => {
   });
 };
 
-const deleteUser = async (email, env) => {
+export const deleteUser = async (email, env) => {
   // first run deleteSubscription if any previous subscriptions
   // this function deletes userprofile and cognito user
 
@@ -232,12 +232,18 @@ const deleteUser = async (email, env) => {
     });
 };
 
-export {
-  deleteItemsFromGroups,
-  addParam,
-  copyAdminDataFromStagingToProd,
-  copyTemplatesBetweenEnv,
-  renameParameter,
-  deleteSubscription,
-  deleteUser,
+export const updateRecipeCategory = async (env) => {
+  const TableName = env.ops.recipe;
+  const recipes = await scanDC({ TableName });
+  // recipes.slice(0, 1).forEach(({ id }) => {
+  recipes.forEach(({ id }) => {
+    console.log("Updating recipe id:", id);
+    updateDC({
+      TableName,
+      Key: { id },
+      ExpressionAttributeValues: { ":category": "food" },
+      UpdateExpression: "SET category = :category",
+    })
+  }
+  );
 };

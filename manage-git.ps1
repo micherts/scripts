@@ -8,5 +8,5 @@ git clone git@github.com:micherts/$project.git
 # Update
 Set-Location $wl
 git add .
-git commit -m 'renamed account-verified to new-user-account-verified'
+git commit -m 'renamed index to delete-customer, created update-recipes'
 git push origin master
