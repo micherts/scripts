@@ -8,5 +8,5 @@ git clone git@github.com:micherts/$project.git
 # Update
 Set-Location $wl
 git add .
-git commit -m 'renamed index to delete-customer, created update-recipes'
+git commit -m 'updated staging to stage env, added copy-amplify-env scripts'
 git push origin master

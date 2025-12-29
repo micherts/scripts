@@ -27,31 +27,37 @@ const prod = {
   },
 };
 
-const staging = {
-  name: "staging",
+const stage = {
+  name: "stage",
   admin: {
-    area: "Area-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    category: "Category-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    period: "Period-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    store: "Store-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    unit: "Unit-lipwzvjrj5e5dgus2mtiogdk5i-staging",
+    area: "Area-awtteslu4jedfgqftpal6fpuny-stage",
+    category: "Category-awtteslu4jedfgqftpal6fpuny-stage",
+    period: "Period-awtteslu4jedfgqftpal6fpuny-stage",
+    recipeTag: "RecipeTag-awtteslu4jedfgqftpal6fpuny-stage",
+    store: "Store-awtteslu4jedfgqftpal6fpuny-stage",
+    unit: "Unit-awtteslu4jedfgqftpal6fpuny-stage",
+    variation: "Variation-awtteslu4jedfgqftpal6fpuny-stage"
   },
   ops: {
-    operation: "Operation-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    ingredient: "Ingredient-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    overhead: "Overhead-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    recipe: "Recipe-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    recipeIngredient: "RecipeIngredient-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    role: "Role-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    supplier: "Supplier-lipwzvjrj5e5dgus2mtiogdk5i-staging",
+    operation: "Operation-awtteslu4jedfgqftpal6fpuny-stage",
+    ingredient: "Ingredient-awtteslu4jedfgqftpal6fpuny-stage",
+    overhead: "Overhead-awtteslu4jedfgqftpal6fpuny-stage",
+    pageAccess: "PageAccess-awtteslu4jedfgqftpal6fpuny-stage",
+    recipe: "Recipe-awtteslu4jedfgqftpal6fpuny-stage",
+    recipeIngredient: "RecipeIngredient-awtteslu4jedfgqftpal6fpuny-stage",
+    role: "Role-awtteslu4jedfgqftpal6fpuny-stage",
+    supplier: "Supplier-awtteslu4jedfgqftpal6fpuny-stage",
+    squareConfig: "SquareConfig-awtteslu4jedfgqftpal6fpuny-stage",
+    squareSyncHistory: "SquareSyncHistory-awtteslu4jedfgqftpal6fpuny-stage"
   },
   config: {
-    userProfile: "UserProfile-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    membership: "Membership-lipwzvjrj5e5dgus2mtiogdk5i-staging",
-    UserPoolId: "ap-southeast-2_aNghcOUvd",
+    action: "Action-awtteslu4jedfgqftpal6fpuny-stage",
+    userProfile: "UserProfile-awtteslu4jedfgqftpal6fpuny-stage",
+    membership: "Membership-awtteslu4jedfgqftpal6fpuny-stage",
+    UserPoolId: "ap-southeast-2_w14NIlIIp",
     demoVenues: ["135b82d6-a833-41bb-892c-f2d84c71030a"],
     templateGroups: ["Template"],
   },
 };
 
-export { region, prod, staging };
+export { region, prod, stage };
