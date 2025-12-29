@@ -13,3 +13,9 @@ $tables | % {Update-DDBContinuousBackup -TableName $_ -PointInTimeRecoverySpecif
 # Delete tables 
 $tables = Get-DDBTableList | Where-Object { $_ -like "*staging*" }
 $tables | % {Remove-DDBTable -TableName $_ -Force}
+
+# Set lambda trigger for Cognito User Pool
+$envs = Get-Content "../env.json" | ConvertFrom-Json
+$env = $envs.stage
+$poolConfig = aws cognito-idp describe-user-pool --user-pool-id $($env.cognito.userPoolId) --query 'UserPool.{AutoVerifiedAttributes:AutoVerifiedAttributes,AliasAttributes:AliasAttributes,UsernameAttributes:UsernameAttributes}' --output json | ConvertFrom-Json
+aws cognito-idp update-user-pool --user-pool-id $($env.cognito.userPoolId) --lambda-config PostConfirmation=$($env.lambda.accountVerifiedArn) --auto-verified-attributes $poolConfig.AutoVerifiedAttributes

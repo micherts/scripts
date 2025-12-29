@@ -9,7 +9,9 @@ import {
   DeleteGroupCommand,
 } from "@aws-sdk/client-cognito-identity-provider";
 import { v4 as uuidv4 } from "uuid";
-import { region } from "./env.js";
+import { readFileSync } from "fs";
+const { region } = JSON.parse(readFileSync("../env.json", "utf8"));
+
 
 const client = new CognitoIdentityProviderClient({ region });
 

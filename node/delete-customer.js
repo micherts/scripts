@@ -1,11 +1,13 @@
+import { readFileSync } from "fs";
 import { deleteSubscription, deleteUser } from "./functions.js";
-import { stage } from "./env.js";
+
+const { stage: env } = JSON.parse(readFileSync("../env.json", "utf8"));
 
 // Customer Deletion
 // First manually delete customer from Stripe
 const email = "602.sunday@gmail.com";
-await deleteSubscription(email, stage);
-deleteUser(email, stage);
+await deleteSubscription(email, env);
+deleteUser(email, env);
 
 // Object.values(staging.ops).forEach((table) => updateData(table));
 // addParam(staging.ops.operation, { operation: 0 });

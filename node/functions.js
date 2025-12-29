@@ -95,7 +95,7 @@ export const deleteSubscription = async (email, env) => {
 
   console.log(`Delete Subscriptions for ${email}.`);
   // UserProfile	email = user's email	Get attribute id
-  let TableName = env.config.userProfile;
+  let TableName = env.dynamo.tables.config.userProfile;
   const userProfiles = (
     await scanDC(
       {
@@ -119,7 +119,7 @@ export const deleteSubscription = async (email, env) => {
     );
 
     // Operation	mainUser = UserProfile.id	Get attribute userGroup
-    TableName = env.ops.operation;
+    TableName = env.dynamo.tables.ops.operation;
     const venues = (
       await scanDC(
         {
@@ -143,7 +143,7 @@ export const deleteSubscription = async (email, env) => {
     // RecipeIngredient	userGroup = Operation.userGroup	Delete items
     // Role	userGroup = Operation.userGroup	Delete items
     // Supplier	userGroup = Operation.userGroup	Delete items
-    Object.values(env.ops).forEach(async (TableName) => {
+    Object.values(env.dynamo.tables.ops).forEach(async (TableName) => {
       const items = (
         await scanDC(
           {
@@ -163,7 +163,7 @@ export const deleteSubscription = async (email, env) => {
     });
 
     // Membership	ownerId = UserProfile.id	Delete items
-    TableName = env.config.membership;
+    TableName = env.dynamo.tables.config.membership;
     const memberships = (
       await scanDC(
         {
@@ -181,7 +181,7 @@ export const deleteSubscription = async (email, env) => {
     ));
 
     // Group Memberships		Delete subscribed group (may not want to delete in PROD)
-    const { UserPoolId, templateGroups } = env.config;
+    const { userPoolId: UserPoolId, templateGroups } = env.cognito;
     venues.forEach(({ userGroup: GroupName }) =>
       deleteGroup({ GroupName, UserPoolId }, `userGroup: ${GroupName} DELETE.`)
     );
@@ -204,7 +204,7 @@ export const deleteUser = async (email, env) => {
 
   console.log(`Delete User ${email}.`);
   // UserProfile	email = user's email
-  const { userProfile: TableName } = env.config;
+  const { userProfile: TableName } = env.dynamo.tables.config;
   const userProfiles = (
     await scanDC(
       {
@@ -227,13 +227,13 @@ export const deleteUser = async (email, env) => {
     .map(({ id }) => id)
     .filter((a, i, self) => i === self.indexOf(a))
     .forEach((id) => {
-      const { UserPoolId } = env.config;
+      const { userPoolId: UserPoolId } = env.cognito;
       delUser({ Username: id, UserPoolId }, `user: ${id} DELETE.`);
     });
 };
 
 export const updateRecipeCategory = async (env) => {
-  const TableName = env.ops.recipe;
+  const TableName = env.dynamo.tables.ops.recipe;
   const recipes = await scanDC({ TableName });
   // recipes.slice(0, 1).forEach(({ id }) => {
   recipes.forEach(({ id }) => {

@@ -9,7 +9,9 @@ import {
   DeleteCommand,
   ScanCommand,
 } from "@aws-sdk/lib-dynamodb";
-import { region } from "./env.js";
+import { readFileSync } from "fs";
+const { region } = JSON.parse(readFileSync("../env.json", "utf8"));
+
 
 const client = new DynamoDBClient({ region });
 const dc = DynamoDBDocumentClient.from(client);
