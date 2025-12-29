@@ -120,11 +120,15 @@ const deleteGroup = async (params, log) => {
 
 const delUser = async (params, log) => {
   // params = {Username, UserPoolId}
-  cl(log);
-  const {
-    $metadata: { httpStatusCode },
-  } = await client.send(new AdminDeleteUserCommand(params));
-  cl(log, getReasonPhrase(httpStatusCode));
+  try {
+    cl(log);
+    const {
+      $metadata: { httpStatusCode },
+    } = await client.send(new AdminDeleteUserCommand(params));
+    cl(log, getReasonPhrase(httpStatusCode));
+  } catch (e) {
+    cl(log, e.message);
+  }
 };
 
 // const deleteUsers = (usernames, UserPoolId) =>

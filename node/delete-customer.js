@@ -5,7 +5,8 @@ const { stage: env } = JSON.parse(readFileSync("../env.json", "utf8"));
 
 // Customer Deletion
 // First manually delete customer from Stripe
-const email = "602.sunday@gmail.com";
+// const email = "602.sunday@gmail.com";
+const email = "hello@hosposure.com.au";
 await deleteSubscription(email, env);
 deleteUser(email, env);
 

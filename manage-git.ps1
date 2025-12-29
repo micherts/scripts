@@ -8,5 +8,5 @@ git clone git@github.com:micherts/$project.git
 # Update
 Set-Location $wl
 git add .
-git commit -m 'combined separate env.js files to master env.json in project root'
+git commit -m 'moved manage-s3 upload script to s3upload folder, updated env.json'
 git push origin master

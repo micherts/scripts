@@ -105,6 +105,8 @@ export const deleteSubscription = async (email, env) => {
     )
   ).filter((a) => a.email === email);
 
+  console.log({userProfiles});
+
   userProfiles.forEach(async ({ id: userProfileId }) => {
     // UserProfile	email = user's email	Remove attribute selectedVenueId
     const param = "selectedVenueId";
