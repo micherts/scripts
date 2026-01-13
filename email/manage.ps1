@@ -3,8 +3,10 @@ $wl = "${Home}\Documents\Code\$project"
 Set-Location $wl
 
 # Note: txt templates are not configured to use the 11ty variables as I couldn't get it to work for txt files. So all txt templates must be manually updated.
+Set-Location src
 npm start
 
+Set-Location $wl
 $emails = Get-Content .\emails.json | ConvertFrom-Json
 
 # Use Stripo or manually to create and export the HTML template and save as template-$name.html.
@@ -15,10 +17,10 @@ $emails = Get-Content .\emails.json | ConvertFrom-Json
 # $email = $emails.'subscription-decreased'
 # $email = $emails.'subscription-expiration-warning'
 # $email = $emails.'error-report'
-# $email = $emails.'additional-user-invitation'
-# $email = $emails.'additional-user-added-venue'
+$email = $emails.'additional-user-added-venue'
 # $email = $emails.'additional-user-removed-venue'
-$email = $emails.'demo-nudge'
+# $email = $emails.'demo-nudge'
+
 
 $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
     @{
