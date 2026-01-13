@@ -125,25 +125,25 @@ permalink: template-{{ title }}.html
 
 <body>
   <div class="page">
-    {% if banner %}<img src="https://hosposure.com.au/img/banners/{{ banners[banner].email }}" class="banner"
+    {% if banner %}<img src="https://{{ general.web.banners }}/{{ banners[banner].email }}" class="banner"
       alt="{{ banners[banner].alt }}" />{% endif %} {{ content }}
     <footer>
       <div class="img">
-        <a target="_blank" href="https://hosposure.com.au"><img src="https://hosposure.com.au/img/hospoSureLogo.png"
-            alt="HospoSure | Your cafe with confidence" width="342" /></a>
+        <a target="_blank" href="https://{{ general.web.site }}"><img src="https://{{ general.web.img }}/hospoSureLogo.png"
+            alt="{{ general.slogan }}" width="342" /></a>
       </div>
       <div>
-        <a target="_blank" href="https://www.linkedin.com/company/hosposure">
-          <img src="https://hosposure.com.au/img/icons/linkedin.png" alt="Follow HospoSure on LinkedIn" /></a>
+        <a target="_blank" href="https://{{ general.socials.linkedIn }}">
+          <img src="https://{{ general.web.icons }}/linkedin.png" alt="Follow HospoSure on LinkedIn" /></a>
       </div>
       <p>
-        <a target="_blank" href="https://hosposure.com.au/privacy">Privacy Policy</a>
+        <a target="_blank" href="https://{{ general.legals.privacy }}">Privacy Policy</a>
         |
-        <a target="_blank" href="https://hosposure.com.au/terms">Terms &amp; Conditions</a>
+        <a target="_blank" href="https://{{ general.legals.terms }}">Terms &amp; Conditions</a>
       </p>
       <p>
-        Copyright &copy; 2025
-        <a target="_blank" href="https://hosposure.com.au">HospoSure Pty Ltd</a>. <br />All rights reserved.
+        Copyright &copy; {{ "now" | date: "%Y" }}
+        <a target="_blank" href="https://{{ general.web.site }}">{{ general.company.full }}</a>. <br />All rights reserved.
       </p>
     </footer>
   </div>

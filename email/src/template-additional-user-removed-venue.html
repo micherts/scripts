@@ -5,7 +5,24 @@ banner: barista-making-coffee
 ---
 
 <h2>Hi {% raw %}{{name}}{% endraw %},</h2>
-<p>This is to inform you your access to the venue {% raw %}{{venue}}{% endraw %} has been removed by {% raw %}{{owner}}{% endraw %} from your HospoSure account.</p>
-<a href="https://app.hosposure.com.au" id="sign-in-button" class="button" data-button="success">Sign In</a>
-<p>If you have any questions, please contact {% raw %}{{owner}}{% endraw %} directly. Alternatively, if you believe this was done in error, please reach out to us at <a target="_blank" href="mailto:hello@hosposure.com.au">hello@hosposure.com.au</a>.</p>
+<p>
+  This is to inform you your access to the venue {% raw %}{{venue}}{% endraw %}
+  has been removed by {% raw %}{{owner}}{% endraw %} from your HospoSure
+  account.
+</p>
+<a
+  href="https://{{ general.app.site }}"
+  id="sign-in-button"
+  class="button"
+  data-button="success"
+  >Sign In</a
+>
+<p>
+  If you have any questions, please contact {% raw %}{{owner}}{% endraw %}
+  directly. Alternatively, if you believe this was done in error, please reach
+  out to us at
+  <a target="_blank" href="mailto:{{ general.contactUs }}"
+    >{{ general.contactUs }}</a
+  >.
+</p>
 <p>Thank you for your attention.</p>

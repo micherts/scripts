@@ -2,6 +2,7 @@ $project = "scripts\email"
 $wl = "${Home}\Documents\Code\$project"
 Set-Location $wl
 
+# Note: txt templates are not configured to use the 11ty variables as I couldn't get it to work for txt files. So all txt templates must be manually updated.
 npm start
 
 $emails = Get-Content .\emails.json | ConvertFrom-Json
@@ -17,6 +18,8 @@ $emails = Get-Content .\emails.json | ConvertFrom-Json
 # $email = $emails.'additional-user-invitation'
 # $email = $emails.'additional-user-added-venue'
 # $email = $emails.'additional-user-removed-venue'
+$email = $emails.'demo-nudge'
+
 $emails.PSObject.Properties | ForEach-Object { $email = $_.value;
     @{
         "Template" = @{

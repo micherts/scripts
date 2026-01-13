@@ -8,5 +8,5 @@ git clone git@github.com:micherts/$project.git
 # Update
 Set-Location $wl
 git add .
-git commit -m 'moved manage-s3 upload script to s3upload folder, updated env.json'
+git commit -m 'updated email templates for 2026 and latest links, created general variables'
 git push origin master

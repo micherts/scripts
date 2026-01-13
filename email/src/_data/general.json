@@ -1,0 +1,26 @@
+{
+  "contactUs": "hello@hosposure.com.au",
+  "slogan": "HospoSure | Your cafe with confidence",
+  "year": 2026,
+  "company": {
+    "full": "HospoSure Pty Ltd",
+    "short": "HospoSure"
+  },
+  "web": {
+    "site": "hosposure.com.au",
+    "img": "hosposure.com.au/img",
+    "banners": "hosposure.com.au/img/banners",
+    "icons": "hosposure.com.au/img/icons"
+  },
+  "app": {
+    "site": "app.hosposure.com.au",
+    "subscribe": "app.hosposure.com.au/profile"
+  },
+  "legals": {
+    "privacy": "hosposure.com.au/privacy",
+    "terms": "hosposure.com.au/terms"
+  },
+  "socials": {
+    "linkedIn": "www.linkedin.com/company/hosposure"
+  }
+}

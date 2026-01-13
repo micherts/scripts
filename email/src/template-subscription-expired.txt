@@ -2,7 +2,7 @@ Hi {{name}},
 
 We wanted to let you know your HospoSure subscription has now expired. If this was a mistake, feel free to resubscribe below. If not, we're sorry to say goodbye.
 
-Go to app.hosposure.com.au/profile/account to resubscribe.
+Go to app.hosposure.com.au/profile to resubscribe.
 
 Access to Your Venues
 You no longer have access to the venues you created in HospoSure.
@@ -17,10 +17,10 @@ If you have any questions or need assistance, please reach out to us anytime at 
 
 HospoSure | Your cafe with confidence
 
-LinkedIn linkedin.com/company/hosposure
+LinkedIn www.linkedin.com/company/hosposure
 
-Privacy Policy hosposure.com.au/privacy.html
-Terms & Conditions hosposure.com.au/terms.html
+Privacy Policy hosposure.com.au/privacy
+Terms & Conditions hosposure.com.au/terms
 
-Copyright &copy; 2025 HospoSure Pty Ltd. hosposure.com.au
+Copyright &copy; 2026 HospoSure Pty Ltd. hosposure.com.au
 All rights reserved.
